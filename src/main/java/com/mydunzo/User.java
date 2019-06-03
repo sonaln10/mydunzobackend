@@ -2,9 +2,10 @@ package com.mydunzo;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,10 +17,16 @@ public class User implements Serializable{
 	private static final long serialVersionUID = -1629956870851946039L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="userid")
 	private String userId;
+	
+	@Column(name="password")
 	private String password;
+	
+	@Column(name="username")
 	private String username;
+	
+	@Column(name="role")
 	private String role;
 	
 	public User(String userId, String password, String username, String role) {
